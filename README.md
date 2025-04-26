@@ -5,5 +5,8 @@
 <br>
 <h2>Senha</h2>
   <h3>teste12345678</h3>
-  
+  <br><br><br>
 Realize um CRUD com equipamentos;
+
+
+py version = 3.13
