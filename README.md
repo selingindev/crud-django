@@ -10,3 +10,4 @@ Realize um CRUD com equipamentos;
 
 
 py version = 3.13
+Integrantes: Arthur Selingin, Ana Paula, Enzo Tanizaki, Guilherme Direnzi, Victor Coriolano
