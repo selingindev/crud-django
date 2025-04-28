@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from equipamentos import Equipamentos
+from .models import Equipamento  
 
 def visualizarEquipamentos(request):
     if request.method == "GET":
-        equipamentos = equipamentos.objects.all;
+        equipamentos = Equipamento.objects.all() 
         print(equipamentos)
+        return render(request, 'visualizarEquipamentos.html', {'equipamentos': equipamentos})
