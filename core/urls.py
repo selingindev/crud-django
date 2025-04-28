@@ -20,5 +20,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', lambda request: redirect('admin/', permanent=False)),
+    path('', lambda request: redirect('visualizarEquipamentos', permanent=False)),
 ]
