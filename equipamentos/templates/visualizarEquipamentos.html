@@ -1,0 +1,35 @@
+{% for i in equipamentos %}
+<div style="overflow-x:auto; margin-bottom: 24px;">
+    <table style="width: 100%; background-color: white; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <thead>
+            <tr style="background-color: #f7fafc;">
+                <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">ID</th>
+                <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">NOME</th>
+                <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">STATUS</th>
+                <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">RA TITULAR</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="transition: background-color 0.2s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#f7fafc';" onmouseout="this.style.backgroundColor='white'">
+                <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
+                    {{i.id}}
+                </td>
+                <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
+                    {{i.nome}}
+                </td>
+                <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
+                    {% if i.status %}
+                        <span style="color: #48bb78;">Sendo usado</span>
+                    {% else %}
+                        <span style="color: #f56565;">Livre</span>
+                    {% endif %}
+                </td>
+                <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
+                    {{i.raTitular}}
+                </td>
+                
+ </tr>
+        </tbody>
+    </table>
+</div>
+{% endfor %}
