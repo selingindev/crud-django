@@ -1,35 +1,41 @@
-{% for i in equipamentos %}
-<div style="overflow-x:auto; margin-bottom: 24px;">
-    <table style="width: 100%; background-color: white; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-        <thead>
-            <tr style="background-color: #f7fafc;">
-                <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">ID</th>
-                <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">NOME</th>
-                <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">STATUS</th>
-                <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">RA TITULAR</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr style="transition: background-color 0.2s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#f7fafc';" onmouseout="this.style.backgroundColor='white'">
-                <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
-                    {{i.id}}
-                </td>
-                <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
-                    {{i.nome}}
-                </td>
-                <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
-                    {% if i.status %}
-                        <span style="color: #48bb78;">Sendo usado</span>
-                    {% else %}
-                        <span style="color: #f56565;">Livre</span>
-                    {% endif %}
-                </td>
-                <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
-                    {{i.raTitular}}
-                </td>
-                
- </tr>
-        </tbody>
-    </table>
+<div style="width: 90%; height: 90%; display: flex; flex-direction: column; justify-content: space-between; position: relative; margin: auto; display: flex;">
+    <div style="overflow-x:auto; flex-grow: 1; border: 1px solid #2d3748;  ">
+        {% for i in equipamentos %}
+        <table style="width: 90%;  background-color: white; margin: 2rem auto; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) ; ">
+            <thead>
+                <tr style="background-color: #f7fafc;">
+                    <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">ID</th>
+                    <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">NOME</th>
+                    <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">STATUS</th>
+                    <th style="padding: 12px 24px; text-align: left; font-size: 14px; font-weight: 500; color: #4a5568; word-wrap: break-word;">RA TITULAR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="transition: background-color 0.2s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#f7fafc';" onmouseout="this.style.backgroundColor='white'">
+                    <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
+                        {{i.id}}
+                    </td>
+                    <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
+                        {{i.nome}}
+                    </td>
+                    <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
+                        {% if i.status %}
+                            <span style="color: #f56565;">Sendo usado</span>
+                        {% else %}
+                            <span style="color: #48bb78;">Livre</span>
+                        {% endif %}
+                    </td>
+                    <td style="padding: 12px 24px; font-size: 14px; color: #2d3748; text-align: left; word-wrap: break-word; width: 25%;">
+                        {{i.raTitular}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {% endfor %}
+    </div>
+    <div style="width: 100%; height: 10%; display: flex; justify-content: center; align-items: center; position: absolute; bottom: 0;">
+        <button onclick="window.location.href='/admin';" style="padding: 10px 20px; font-size: 14px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Ir para o Painel de Admin
+        </button>
+    </div>
 </div>
-{% endfor %}
